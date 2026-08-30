@@ -1,4 +1,4 @@
-# CRAB CV Module - OV7670 Ball-Color Vision
+# CV Module - OV7670 Ball-Color Vision
 
 <div align="center">
 
@@ -15,7 +15,7 @@
 
 ## The Problem
 
-The CRAB boat project needs to find plain solid-color balls floating in a competition water tank and report their color and approximate position. The capture hardware makes that hard:
+The MITRE Intern CRAB Hackathon awarded points for autonomy. Our solution was a camera module with computer vision capabilities on the RC boat that would find plain solid-color balls floating in a competition water tank and report their color and approximate position. The capture hardware makes that hard:
 
 - A HiLetgo OV7670 has no FIFO, so an Arduino Uno must bit-bang every pixel.
 - The only link to the laptop is USB serial, which caps the usable frame rate to roughly one frame every 7-8 seconds.
@@ -313,12 +313,12 @@ The firmware and the ArduImageCapture viewer derive from Khaled Magdy's DeepBlue
 
 ## License
 
-Copyright © 2026 CRAB CV Module. All rights reserved.
+Copyright © 2026 CRAB Winners. All rights reserved.
 
 ---
 
 <div align="center">
 
-**Built for the CRAB boat project - camera and computer-vision proof of concept**
+**Built by the CRAB Winners team for the MITRE Intern CRAB Hackathon 2026**
 
 </div>
