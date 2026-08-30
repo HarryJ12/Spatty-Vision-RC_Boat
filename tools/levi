@@ -1,0 +1,19 @@
+#!/bin/zsh
+# Start the Levithian Command Center from any terminal directory.
+
+set -e
+
+SCRIPT_PATH="$0"
+while [[ -h "$SCRIPT_PATH" ]]; do
+  SCRIPT_DIR="$(cd -P "$(dirname "$SCRIPT_PATH")" && pwd)"
+  SCRIPT_PATH="$(readlink "$SCRIPT_PATH")"
+  [[ "$SCRIPT_PATH" != /* ]] && SCRIPT_PATH="$SCRIPT_DIR/$SCRIPT_PATH"
+done
+PROJECT_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
+pkill -f 'levithian_dashboard.py' 2>/dev/null || true
+
+nohup python3 "$PROJECT_ROOT/tools/levithian_dashboard.py" \
+  >/tmp/levithian-command-center.log 2>&1 &
+
+sleep 1
+open "http://127.0.0.1:8765"
